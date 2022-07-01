@@ -7,17 +7,17 @@ function Card({ picture, name, index, id }) {
   const { route } = useContext(ContextComidas);
 
   return (
-    <Link to={ `${route}/${id}` }>
-      <div data-testid={ `${index}-recipe-card` } className="item">
+    <div data-testid={ `${index}-recipe-card` } className="item">
+      <Link to={ `${route}/${id}` }>
         <img
           src={ picture }
           alt={ name }
           data-testid={ `${index}-card-img` }
           className="img"
         />
-        <p data-testid={ `${index}-card-name` }>{ name }</p>
-      </div>
-    </Link>
+      </Link>
+      <a data-testid={ `${index}-card-name` } href={ `${route}/${id}` }>{ name }</a>
+    </div>
   );
 }
 

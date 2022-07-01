@@ -88,14 +88,6 @@
   display: none;
 } */
 
-.img {
-  border-radius: 10px;
-  height: 500px;
-  object-fit: cover;
-  padding-left: 10px;
-  width: 350px;
-}
-
 .start-recipe-btn {
   bottom: 0;
   display: flex;

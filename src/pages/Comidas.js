@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import CategoryButton from '../components/CategoryButton';
 import ContextComidas from '../context/ContextComidas';
+import '../style/FoodPage.css';
 
 const MAX_CATEGORY = 5;
 const MAX_CARD = 12;
@@ -32,7 +33,7 @@ function Comidas() {
   };
 
   return (
-    <div>
+    <div className="food-page">
       <Header location="Comidas" />
       <div className="category-button">
         {!loading && foodCategories.slice(0, MAX_CATEGORY).map(({ strCategory }) => (
