@@ -104,12 +104,6 @@
   right: 0;
 }
 
-.header {
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
-}
-
 .category-button {
   display: flex;
   justify-content: center;
