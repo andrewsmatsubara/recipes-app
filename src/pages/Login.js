@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import '../style/Login.css';
 
 // referência para o email regex https://www.kindacode.com/article/live-email-validation-in-react-with-regex/
 const EMAILREGEX = /\S+@\S+\.\S+/;
@@ -24,8 +25,8 @@ function Login() {
   };
 
   return (
-    <div className="login-form">
-      <div>
+    <div className="login">
+      <div className="login-form">
         <h1>Login</h1>
         <input
           type="email"
