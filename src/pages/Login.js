@@ -31,7 +31,7 @@ function Login() {
         <input
           type="email"
           name="email"
-          placeholder="trybe@email.com"
+          placeholder="email@email.com"
           data-testid="email-input"
           value={ form.email }
           onChange={ (e) => handleForm(e) }
