@@ -16,7 +16,13 @@ function Card({ picture, name, index, id }) {
           className="img"
         />
       </Link>
-      <a data-testid={ `${index}-card-name` } href={ `${route}/${id}` }>{ name }</a>
+      <a
+        data-testid={ `${index}-card-name` }
+        href={ `${route}/${id}` }
+        className="food-name"
+      >
+        { name }
+      </a>
     </div>
   );
 }

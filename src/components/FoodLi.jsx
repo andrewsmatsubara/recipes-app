@@ -7,45 +7,14 @@ const MAX_URL = 32;
 function FoodLi({ foodId }) {
   const { strYoutube, strInstructions, strMeal } = foodId;
 
-  const ingredients = [];
-  const strIngredient = 'strIngredient';
-  const strMeasure = 'strMeasure';
-  const measure = [];
-
   const unhandleURL = strYoutube === null ? '' : strYoutube;
   const firstURL = unhandleURL.slice(0, MIN_URL);
   const secondURL = unhandleURL.slice(MAX_URL, [unhandleURL.length]);
   const urlYT = `${firstURL}/embed/${secondURL}`;
 
-  Object.entries(foodId).forEach(([key, value]) => {
-    if (key.includes(strIngredient)) return ingredients.push(value);
-    if (key.includes(strMeasure)) return measure.push(value);
-  });
-
-  const liCondition = (ingredient, index) => `${ingredient}
-    ${measure[index] === null
-    || measure[index] === ''
-    ? '' : ` - ${measure[index]}`}`;
-
-  function liContent() {
-    return ingredients
-      .map((ingredient, index) => (ingredient !== '' && ingredient !== null ? (
-        <li
-          key={ index }
-          data-testid={ `${index}-ingredient-name-and-measure` }
-        >
-          { liCondition(ingredient, index) }
-          {' '}
-        </li>)
-        : null));
-  }
-
   return (
-    <div>
-      <ul>
-        {liContent()}
-      </ul>
-      <p data-testid="instructions">{ strInstructions }</p>
+    <div className="food-description-div">
+      <p data-testid="instructions" className="instructions">{ strInstructions }</p>
       { strYoutube && strYoutube !== null ? (<iframe
         data-testid="video"
         title={ strMeal }
@@ -54,6 +23,7 @@ function FoodLi({ foodId }) {
         src={ urlYT }
         frameBorder="0"
         allowFullScreen
+        className="video"
       />) : null}
     </div>
   );

@@ -96,47 +96,8 @@
   right: 0;
 }
 
-.category-button {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-}
-
-.food-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
 .drink-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.search-button {
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  height: 30px;
-}
-
-.btn-div {
-  display: flex;
-  justify-content: space-between;
-  width: 150px;
-}
-
-.share-btn {
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  height: 30px;
-}
-
-.favorite-btn {
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  height: 30px;
 }
