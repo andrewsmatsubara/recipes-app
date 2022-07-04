@@ -68,9 +68,12 @@ function FoodInfo({ foodId }) {
         >
           {`Category: ${strCategory}`}
         </p>
-        <ul>
-          {liContent()}
-        </ul>
+        <div className="ingredients-div">
+          <p>Ingredients:</p>
+          <ul>
+            {liContent()}
+          </ul>
+        </div>
       </div>
     </div>
   );

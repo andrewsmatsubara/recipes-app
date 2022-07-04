@@ -81,7 +81,8 @@
   overflow-x: auto;
   position: relative;
   scroll-behavior: smooth;
-  width: 700px;
+  width: 750px;
+  margin-bottom: 100px;
 }
 
 /* .slider::-webkit-scrollbar {

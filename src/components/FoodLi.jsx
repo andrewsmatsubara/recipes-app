@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const MIN_URL = 23;
 const MAX_URL = 32;
 
 function FoodLi({ foodId }) {
+  const [desc, setDesc] = useState([]);
   const { strYoutube, strInstructions, strMeal } = foodId;
 
   const unhandleURL = strYoutube === null ? '' : strYoutube;
@@ -12,9 +13,35 @@ function FoodLi({ foodId }) {
   const secondURL = unhandleURL.slice(MAX_URL, [unhandleURL.length]);
   const urlYT = `${firstURL}/embed/${secondURL}`;
 
+  const splitInstructions = () => {
+    const instructionsStrings = strInstructions.split('.');
+
+    instructionsStrings.pop();
+
+    setDesc(instructionsStrings);
+  };
+
+  useEffect(() => {
+    splitInstructions();
+  }, []);
+
   return (
     <div className="food-description-div">
-      <p data-testid="instructions" className="instructions">{ strInstructions }</p>
+      <div>
+        <h4>Instructions:</h4>
+        <ol
+          data-testid="instructions"
+          className="instructions"
+        >
+          { desc.map((instruction, id) => (
+            <li
+              key={ `list-element-${id}` }
+            >
+              {instruction}
+            </li>
+          )) }
+        </ol>
+      </div>
       { strYoutube && strYoutube !== null ? (<iframe
         data-testid="video"
         title={ strMeal }

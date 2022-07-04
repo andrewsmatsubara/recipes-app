@@ -26,11 +26,11 @@ function FoodDetail() {
   return (
     <div>
       {(loading ? <p> Loading...</p> : (
-        <>
+        <div className="general-description-page">
           <FoodInfo foodId={ foodId[0] } />
           <FoodLi foodId={ foodId[0] } />
           <DrinkCarousel drinkCard={ drinkCard } />
-        </>
+        </div>
       ))}
       <div>
         <button
